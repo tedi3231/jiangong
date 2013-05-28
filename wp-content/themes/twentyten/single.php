@@ -16,7 +16,7 @@ get_header();
 			<h4 class="news_title">
 				
 				<?php
-					$c= wp_get_post_categories(50);
+					$c= wp_get_post_categories(get_query_var('p'));
 					$cat_id = 0;
 					foreach($c as $item){
 						$cat_id= $item;
