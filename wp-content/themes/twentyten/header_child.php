@@ -44,11 +44,7 @@
 					</div>
 				</div>
 				<div id="header_slider" style="margin-top:0px;">
-				<?php if(is_home()):?>
-				<img src="<?php bloginfo('template_url')?>/bootstrap/img/slider1.png"/>
-				<?php else: ?>
 				<img src="<?php bloginfo('template_url')?>/bootstrap/img/banner.png"/>
-				<?php endif; ?>
 				</div>
 			</div>
 	

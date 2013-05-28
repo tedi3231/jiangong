@@ -1,50 +1,29 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the id=main div and all content
- * after. Calls sidebar-footer.php for bottom widgets.
- *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
- */
-?>
-	</div><!-- #main -->
-
-	<div id="footer" role="contentinfo">
-		<div id="colophon">
-
-<?php
-	/* A sidebar in the footer? Yep. You can can customize
-	 * your footer with four columns of widgets.
-	 */
-	get_sidebar( 'footer' );
-?>
-
-			<div id="site-info">
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?>
-				</a>
-			</div><!-- #site-info -->
-
-			<div id="site-generator">
-				<?php do_action( 'twentyten_credits' ); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyten' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyten' ); ?>"><?php printf( __( 'Proudly powered by %s.', 'twentyten' ), 'WordPress' ); ?></a>
-			</div><!-- #site-generator -->
-
-		</div><!-- #colophon -->
-	</div><!-- #footer -->
-
-</div><!-- #wrapper -->
-
-<?php
-	/* Always have wp_footer() just before the closing </body>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to reference JavaScript files.
-	 */
-
-	wp_footer();
-?>
-</body>
+	<hr style="margin-left:10px;margin-right:10px;"/>
+		<div id="footer" class="row">
+			 <div class="span4 text-right">
+			 <!--<img src="<?php bloginfo('template_url')?>/bootstrap/img/gongshang.png"/>-->
+			 </div>
+			 <div class="span1 text-left">
+			 <img src="<?php bloginfo('template_url') ?>/bootstrap/img/banner.png" />
+			 </div>
+			 <div class="span7">
+				 <div class="row">
+					 <div class="span12 text-left" style="margin-top:5px;width:500px;">
+					 公司简介|证券信息|知识产权|法律声明|联系我们
+					 </div>
+				 </div>
+				 <div class="row">
+					 <div class="span12 text-left" style="margin-top:5px;width:500px;">
+						 Copyright@上海建工集团股份有限公司 All rights reserved 沪ICP备:05055280
+					 </div>
+				 </div>
+			 </div>
+	   </div>
+	  </div>
+        <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<script src="<?php bloginfo('template_url')?>/bootstrap/js/bootstrap.js"></script>
+  </body>
 </html>
+
