@@ -7,28 +7,52 @@
  * @since Twenty Ten 1.0
  */
 
-get_header(); ?>
+get_header();
+ ?>
+<div id="news_list">
+	<div id="news_content" class="row-fluid">
+		<div class="span3">
+			<h4 class="news_title">
+				 <?php
+				$thisCat = get_category(get_query_var('cat'), false);
+				$parentCat = null;
+				$categories = null;
+				
+				if ($thisCat -> parent > 0) {
+					$parentCat=get_category($thisCat->parent,false);
+					$categories = get_categories(array('child_of' => $thisCat -> parent));
+				}else{
+					$parentCat=$thisCat;
+					$categories = get_categories(array('child_of' => $thisCat->term_id));
+				}
+					//echo $categories;	 
+				 ?>
+			 <?php if($parentCat) echo $parentCat->cat_name; ?>
+			</h4>
+			<hr style="margin:0px;"/>
+			<ul class="nav nav-list ">
+				<?php foreach ($categories as $cat):?>
+				<li class="<?php /*if( $thisCat->id==$cat->id) echo 'active';*/?>">
+					<a href="<?php bloginfo('url');?>/?cat=<?php echo $cat->term_id; ?>"><?php echo $cat->cat_name;?></a>
+				</li>
+				<?php endforeach;?>
+			</ul>
+		</div>
+		<div class="span9">
+			<h4 class="news_title"><?php
+			$thisCat = get_category(get_query_var('cat'), false);
+			echo $thisCat -> name;
+				?></h4>
+			<hr/>
+			<?php
+			/* Run the loop for the category page to output the posts.
+			 * If you want to overload this in a child theme then include a file
+			 * called loop-category.php and that will be used instead.
+			 */
+			get_template_part('loop', 'category');
+			?>
+		</div>
+	</div>
+</div>
 
-		<div id="container">
-			<div id="content" role="main">
-
-				<h1 class="page-title"><?php
-					printf( __( 'Category Archives: %s', 'twentyten' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-				?></h1>
-				<?php
-					$category_description = category_description();
-					if ( ! empty( $category_description ) )
-						echo '<div class="archive-meta">' . $category_description . '</div>';
-
-				/* Run the loop for the category page to output the posts.
-				 * If you want to overload this in a child theme then include a file
-				 * called loop-category.php and that will be used instead.
-				 */
-				get_template_part( 'loop', 'category' );
-				?>
-
-			</div><!-- #content -->
-		</div><!-- #container -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

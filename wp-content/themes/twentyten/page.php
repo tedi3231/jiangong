@@ -16,7 +16,7 @@ get_header(); ?>
 
 		<div id="container">
 			<div id="content" role="main">
-
+sasassa
 			<?php
 			/* Run the loop to output the page.
 			 * If you want to overload this in a child theme then include a file
@@ -27,6 +27,4 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #container -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -1,27 +1,67 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying Category Archive pages.
  *
  * @package WordPress
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
 
-get_header(); ?>
-
-		<div id="container">
-			<div id="content" role="main">
-
+get_header();
+ ?>
+<div id="news_list">
+	<div id="news_content" class="row-fluid">
+		<div class="span3">
+			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+			<h4 class="news_title">
+				
+				<?php
+					$c= wp_get_post_categories(50);
+					$cat_id = 0;
+					foreach($c as $item){
+						$cat_id= $item;
+						break;
+					}
+					
+						//echo $item->cat_name;
+				?>
+				 <?php
+				$thisCat = get_category($cat_id, false);
+				$parentCat = null;
+				$categories = null;
+				
+				if ($thisCat -> parent > 0) {
+					$parentCat=get_category($thisCat->parent,false);
+					$categories = get_categories(array('child_of' => $thisCat -> parent));
+				}else{
+					$parentCat=$thisCat;
+					$categories = get_categories(array('child_of' => $thisCat->term_id));
+				}
+					//echo $categories;	 
+				 ?>
+			 <?php if($parentCat) echo $parentCat->cat_name; ?>
+			</h4>
+			<hr style="margin:0px;"/>
+			<ul class="nav nav-list ">
+				<?php foreach ($categories as $cat):?>
+				<li class="<?php /*if( $thisCat->id==$cat->id) echo 'active';*/?>">
+					<a href="<?php bloginfo('url');?>/?cat=<?php echo $cat->term_id; ?>"><?php echo $cat->cat_name;?></a>
+				</li>
+				<?php endforeach;?>
+			</ul>
+		</div>
+		<div class="span9">
+			
+			<h4 class="news_title"><?php
+			the_title();
+				?></h4>
+			<hr/>			
 			<?php
-			/* Run the loop to output the post.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-single.php and that will be used instead.
-			 */
-			get_template_part( 'loop', 'single' );
+				the_content();
 			?>
-
-			</div><!-- #content -->
-		</div><!-- #container -->
-
-<?php get_sidebar(); ?>
+			
+			<?php endwhile; ?>
+		</div>
+	</div>
+</div>
 <?php get_footer(); ?>

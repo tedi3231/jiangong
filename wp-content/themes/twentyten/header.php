@@ -47,7 +47,7 @@
 				<?php if(is_home()):?>
 				<img src="<?php bloginfo('template_url')?>/bootstrap/img/slider1.png"/>
 				<?php else: ?>
-				<img src="<?php bloginfo('template_url')?>/bootstrap/img/banner.png"/>
+				<img src="<?php bloginfo('template_url')?>/bootstrap/img/second_banner.png"/>
 				<?php endif; ?>
 				</div>
 			</div>
