@@ -15,6 +15,21 @@
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/jquery.min.js"></script>
+	<?php
+		/* We add some JavaScript to pages with the comment form
+		 * to support sites with threaded comments (when in use).
+		 */
+		if ( is_singular() && get_option( 'thread_comments' ) )
+			wp_enqueue_script( 'comment-reply' );
+	
+		/* Always have wp_head() just before the closing </head>
+		 * tag of your theme, or you will break many plugins, which
+		 * generally use this hook to add elements to <head> such
+		 * as styles, scripts, and meta tags.
+		 */
+		wp_head();
+	?>
   </head>
 
   <body>
@@ -45,13 +60,10 @@
 				</div>
 				<div id="header_slider" class="<?php if(is_home()) echo 'header_slider_home';?>" >
 					<?php if(is_home()):?>
-						 
-						<?php if ( function_exists( 'meteor_slideshow' ) ) { meteor_slideshow();} ?>
-						 
-						<div class="slider_title">
-							Very good
+						 <div class="slider_title">
+							&nbsp;
 						</div>
-						
+						<?php if ( function_exists( 'meteor_slideshow' ) ) { meteor_slideshow();} ?>						
 					<?php else: ?>
 						<img src="<?php bloginfo('template_url')?>/bootstrap/img/second_banner.png"/>
 					<?php endif; ?>

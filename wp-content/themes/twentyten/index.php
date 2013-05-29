@@ -19,7 +19,7 @@
 							<hr style="margin:2px;"/>
 							<ul class="nav nav-list">
 								<?php
-									$args = array('numberposts'=>6,'offset'=>0	,'category'=>5);
+									$args = array('numberposts'=>7,'offset'=>0	,'category'=>5);
 									$myposts = get_posts($args);
 									foreach( $myposts as $post):setup_postdata($post);
 									?>
@@ -141,6 +141,39 @@
 
 					</div>
 					<div class="span3">
+						
+                             <div id="message" class="row" style="background-color:#eeeeee;padding-left:10px;padding-right:10px;">
+								<div class="news_title">
+									<div class="row">
+										<div class="span7">
+											<span>公告栏</span>
+										</div>
+									<div class="span2 text-right">
+										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=16">
+											更 多
+										</a>
+									</div>
+									</div>
+								</div>
+								<div style="height:150px;padding-left:10px;">
+									<marquee style="height:150px;" onMouseOver="this.stop()" onMouseOut="this.start()" scrollamount="4" scrolldelay="5	00" direction="up">                                 		
+										<ul class="nav nav-list">
+										<?php
+												$args = array('numberposts'=>6,'offset'=>0	,'category'=>28);
+												$myposts = get_posts($args);
+												foreach( $myposts as $post):setup_postdata($post);
+										?> 									 
+										<li >
+										<a style="color:#0088CC;" href="<?php the_permalink(); ?>"> 
+											<?php echo the_title(); ?> 
+											<?php /*echo mysql2date('y/m/d ', $post -> post_date);*/ ?>
+										</a>		
+										</li>							 								
+										<?php endforeach; ?>
+										</ul>
+									</marquee>
+								</div>							
+						</div>
 						<div id="project" class="row" style="background-color:#eeeeee;padding-left:10px;padding-right:10px;">
 								<div class="news_title">
 									<div class="row">
@@ -174,13 +207,13 @@
 								</div>
 							<?php endforeach; ?>
 						</div>
-						<br/>
-						<div id="zhaoping" class="row" style="margin-bottom:35px;">
+						 
+						<div id="zhaoping" class="row" style="margin-top:10px;" >
 							<a href="<?php bloginfo('url')?>/?cat=25">
 								<img src="<?php bloginfo('template_url') ?>/bootstrap/img/zhaoping.png"/>
 							</a>
 						</div>
-						<br/>
+						 
 						<div id="project" class="row"> 
 								<div class="news_title">
 									<div class="row">
