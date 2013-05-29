@@ -9,7 +9,7 @@
 
 get_header();
  ?>
-<div id="news_list">
+<div id="news_list" style="height: 820px;">
 	<div id="news_content" class="row-fluid">
 		<div class="span3">
 			<h4 class="news_title">
@@ -20,7 +20,7 @@ get_header();
 				
 				if ($thisCat -> parent > 0) {
 					$parentCat=get_category($thisCat->parent,false);
-					$categories = get_categories(array('child_of' => $thisCat -> parent));
+					$categories = get_categories(array('child_of' => $thisCat -> parent,'hide_empty'=>false));
 				}else{
 					$parentCat=$thisCat;
 					$categories = get_categories(array('child_of' => $thisCat->term_id));
@@ -33,8 +33,7 @@ get_header();
 			<ul class="nav nav-list ">
 				<?php foreach ($categories as $cat):?>
 				<li class="<?php /*if( $thisCat->id==$cat->id) echo 'active';*/?>">
-					<a href="<?php bloginfo('url');?>/?cat=<?php echo $cat->term_id; ?>"><?php echo $cat->cat_name;?></a>
-					
+				 <a class="<?php if( $thisCat->term_id==$cat->term_id) echo 'current-category'; ?>" href="<?php bloginfo('url'); ?>/?cat=<?php echo $cat -> term_id; ?>"><?php echo $cat -> cat_name; ?></a>
 				</li>
 				<?php endforeach;?>
 			</ul>

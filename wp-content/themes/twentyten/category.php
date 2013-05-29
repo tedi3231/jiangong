@@ -13,30 +13,33 @@ get_header();
 	<div id="news_content" class="row-fluid">
 		<div class="span3">
 			<h4 class="news_title">
-				
-				 <?php
-				$thisCat = get_category(get_query_var('cat'), false);
-				$parentCat = null;
-				$categories = null;
-				
-				if ($thisCat -> parent > 0) {
-					$parentCat=get_category($thisCat->parent,false);
-					$categories = get_categories(array('child_of' => $thisCat -> parent));
-				}else{
-					$parentCat=$thisCat;
-					$categories = get_categories(array('child_of' => $thisCat->term_id));
-				}
-					//echo $categories;	 
-				 ?>
-			 <?php if($parentCat) echo $parentCat->cat_name; ?>
+				<?php
+					$thisCat = get_category(get_query_var('cat'), false);
+					$parentCat = null;
+					$categories = null;
+	
+					if ($thisCat -> parent > 0) {
+						$parentCat = get_category($thisCat -> parent, false);
+						$categories = get_categories(array('child_of' => $thisCat -> parent, 'hide_empty' => false));
+					} else {
+						$parentCat = $thisCat;
+						$categories = get_categories(array('child_of' => $thisCat -> term_id, 'hide_empty' => false));
+					}
+				//echo $categories;
+				?>
+				<?php
+					if ($parentCat){
+						echo $parentCat -> cat_name;
+					}
+	 			?>
 			</h4>
 			<hr style="margin:0px;"/>
 			<ul class="nav nav-list ">
 				<?php foreach ($categories as $cat):?>
-				<li class="<?php /*if( $thisCat->id==$cat->id) echo 'active';*/?>">
-					<a href="<?php bloginfo('url');?>/?cat=<?php echo $cat->term_id; ?>"><?php echo $cat->cat_name;?></a>
+				<li>
+					<a class="<?php if( $thisCat->term_id==$cat->term_id) echo 'current-category'; ?>" href="<?php bloginfo('url'); ?>/?cat=<?php echo $cat -> term_id; ?>"><?php echo $cat -> cat_name; ?></a>
 				</li>
-				<?php endforeach;?>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 		<div class="span9">

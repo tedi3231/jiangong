@@ -10,7 +10,7 @@
 										<span >综合新闻</span>
 									</div>
 									<div class="span2 text-right">
-										<a class="more" href="<? echo bloginfo('url');?>/?cat=5">
+										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=5">
 											更 多
 										</a>
 									</div>
@@ -24,12 +24,12 @@
 									foreach( $myposts as $post):setup_postdata($post);
 									?>
 									<li>
-										<a href="<?php the_permalink();?>">
-<?php echo mysql2date('[ Y/m/d ]',$post->post_date);?>
+										<a href="<?php the_permalink(); ?>">
+<?php echo mysql2date('[ Y/m/d ]', $post -> post_date); ?>
 											<?php echo the_title('','',FALSE)?>
 										</a>
 									</li>
-								<?php endforeach;?>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 						<!-- complex news end -->
@@ -42,7 +42,7 @@
 										<span>图片新闻</span>
 									</div>
 									<div class="span2 text-right">
-										<a class="more" href="<? echo bloginfo('url');?>/?cat=4">
+										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=4">
 											更 多
 										</a>
 									</div>
@@ -58,12 +58,16 @@
 								<div class="span4">
 									<div>
 										<?php
-											if(has_post_thumbnail()){
-												the_post_thumbnail();
-											}			
+										if (has_post_thumbnail()) {
+											the_post_thumbnail();
+										}
 										 ?>
 									</div>
-									<div class="picture_title"><?php echo the_title('','',FALSE);?></div>
+									<div class="picture_title">
+										<a href="<?php the_permalink(); ?>">
+											<?php echo the_title('', '', FALSE); ?>
+										</a>
+									</div>
 								</div>
 							<?php endforeach; ?>
 							</div>	
@@ -79,7 +83,7 @@
 												<span>党建园地</span>
 											</div>
 									<div class="span2 text-right">
-										<a class="more" href="<? echo bloginfo('url');?>/?cat=6">
+										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=6">
 											更 多
 										</a>
 									</div>
@@ -92,7 +96,7 @@
 													$myposts = get_posts($args);
 													foreach( $myposts as $post):setup_postdata($post);
 											?>
-												<li><a href="<?php the_permalink() ?>"><?php echo the_title('','',FALSE); ?></a></li>
+												<li><a href="<?php the_permalink() ?>"><?php echo the_title('', '', FALSE); ?></a></li>
 											<?php endforeach; ?>
 									</ul>
 							</div>
@@ -103,7 +107,7 @@
 												<span>员工风采</span>
 											</div>
 									<div class="span2 text-right">
-										<a class="more" href="<? echo bloginfo('url');?>/?cat=11">
+										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=11">
 											更 多
 										</a>
 									</div>
@@ -118,13 +122,17 @@
 							?>
 								<div>
 									<?php
-										if(has_post_thumbnail()){
-											the_post_thumbnail(array(350,198));
-										}			
+									if (has_post_thumbnail()) {
+										the_post_thumbnail(array(350, 198));
+									}
 									 ?>
-									<div class="picture_title"><?php echo the_title('','',FALSE);?></div>
+									<div class="picture_title">
+										<a href="<?php the_permalink(); ?>">
+											<?php echo the_title('', '', FALSE); ?>
+										</a>
+									</div>
 								</div>
-							<?php endforeach;?>
+							<?php endforeach; ?>
 						</div>
 						</div>
 
@@ -140,7 +148,7 @@
 											<span>经典项目</span>
 										</div>
 									<div class="span2 text-right">
-										<a class="more" href="<? echo bloginfo('url');?>/?cat=16">
+										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=16">
 											更 多
 										</a>
 									</div>
@@ -153,17 +161,24 @@
 							?>
 								<div>
 									<?php
-										if(has_post_thumbnail()){
-											the_post_thumbnail('',array('class'=>'img-polaroid'));
-										}			
+									if (has_post_thumbnail()) {
+										the_post_thumbnail('', array('class' => 'img-polaroid'));
+									}
 									 ?>
-									<div class="picture_title" style="margin-top:20px;margin-bottom:20px;"><?php echo the_excerpt();?></div>
+									 <!-- style="margin-top:20px;margin-bottom:20px;" -->
+									<div class="picture_title" >
+										<a href="<?php the_permalink(); ?>">
+											<?php echo the_excerpt(); ?>
+										</a>
+									</div>
 								</div>
-							<?php endforeach;?>
+							<?php endforeach; ?>
 						</div>
 						<br/>
-						<div id="zhaoping" class="row">
-						<img src="<?php bloginfo('template_url') ?>/bootstrap/img/zhaoping.png"/>
+						<div id="zhaoping" class="row" style="margin-bottom:35px;">
+							<a href="<?php bloginfo('url')?>/?cat=25">
+								<img src="<?php bloginfo('template_url') ?>/bootstrap/img/zhaoping.png"/>
+							</a>
 						</div>
 						<br/>
 						<div id="project" class="row"> 
@@ -182,7 +197,7 @@
 					  //echo $links;
 					  foreach($links as $link):                                                              
 				?>
-								<li><a href="<?php echo $link->link_url;?>"><?php echo $link->link_name;?></a></li>
+								<li><a href="<?php echo $link -> link_url; ?>"><?php echo $link -> link_name; ?></a></li>
 				<?php endforeach; ?>
 								</ul>
 						</div>
@@ -190,5 +205,7 @@
 				</div>
 		</div>		
 
-	<?php include("footer.php"); ?>
+	<?php
+	include ("footer.php");
+ ?>
 

@@ -43,12 +43,18 @@
 						</div>
 					</div>
 				</div>
-				<div id="header_slider" style="margin-top:0px;">
-				<?php if(is_home()):?>
-				<img src="<?php bloginfo('template_url')?>/bootstrap/img/slider1.png"/>
-				<?php else: ?>
-				<img src="<?php bloginfo('template_url')?>/bootstrap/img/second_banner.png"/>
-				<?php endif; ?>
+				<div id="header_slider" class="<?php if(is_home()) echo 'header_slider_home';?>" >
+					<?php if(is_home()):?>
+						 
+						<?php if ( function_exists( 'meteor_slideshow' ) ) { meteor_slideshow();} ?>
+						 
+						<div class="slider_title">
+							Very good
+						</div>
+						
+					<?php else: ?>
+						<img src="<?php bloginfo('template_url')?>/bootstrap/img/second_banner.png"/>
+					<?php endif; ?>
 				</div>
 			</div>
 	
