@@ -49,7 +49,7 @@ body {
 .nav-list li > a {
 	padding-left: 1px;
 	line-height: 25px;
-	color: #232443;
+	color: #555555;
 }
 .nav-list a.current-category{
 	background-color:#C2D8E7;
@@ -139,7 +139,11 @@ body {
 	display: block;
 	float: left;
 	margin: 0 auto;
-	width: 800px;
+	width: 750px;
+	height: 35px;
+}
+#access ul{
+	margin: 0 0 0 1px;
 }
 #access .menu-header, div.menu {//
 	font-size: 13px;//
