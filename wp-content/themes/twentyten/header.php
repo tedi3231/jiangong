@@ -33,7 +33,7 @@
   </head>
 
   <body>
-	 <div class="container" style="background-color:white;">
+	 <div class="container" style="background-color:white;padding-top:10px;">
 		 <div id="header">
 				<div id="header_top" class="row-fluid" style="height:70px;background-color:white;">
 					<div class="span6" style="padding-left:20px;padding-top:10px;">

@@ -47,6 +47,10 @@
 if ( ! isset( $content_width ) )
 	$content_width = 640;
 
+//remove the html margin-top 28px
+function my_function_admin_bar(){ return false; } 
+add_filter( 'show_admin_bar' ,  'my_function_admin_bar');
+
 /** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'twentyten_setup' );
 
