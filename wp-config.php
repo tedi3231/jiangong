@@ -21,7 +21,7 @@ define('DB_NAME', 'wp_jiangong');
 define('DB_USER', 'root');
 
 /** MySQL 数据库密码 */
-define('DB_PASSWORD', 'loveyuanyuan');
+define('DB_PASSWORD', 'xxxxxxxx');
 
 /** MySQL 主机 */
 define('DB_HOST', 'localhost');
