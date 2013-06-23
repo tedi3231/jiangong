@@ -44,6 +44,34 @@
 if ( ! isset( $content_width ) )
 	$content_width = 584;
 
+/*
+add_action( 'init', 'prowp_register_my_post_types' );
+function prowp_register_my_post_types() {
+	$labels = array(
+		'name'=>'Products',
+		'singular_name'=>'Product',
+		'add_new' => 'Add new Product',
+		'add_new_item'=>'Add New Product',
+		'edit_item'=>'Edit Product',
+		'new_item'=>'New Product',
+		'all_items'=>'All Products',
+		'view_item'=>'View Products',
+		'search_items'=>'Search Products',
+		'not_found'=>'No Products found '
+	);
+	register_post_type( 
+		'products', 
+		array(
+			'labels' =>$labels, 
+			'public' => true, 
+			'has_archive'=>true,
+			//'taxonomies'=>array('category'),
+			'supports'=>array('title','excerpt','editor','author','thumbnail','comments')
+		)
+	);
+}
+ */
+
 /**
  * Tell WordPress to run twentyeleven_setup() when the 'after_setup_theme' hook is run.
  */

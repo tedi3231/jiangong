@@ -60,9 +60,9 @@
 				</div>
 				<div id="header_slider" class="<?php if(is_home()) echo 'header_slider_home';?>" >
 					<?php if(is_home()):?>
-						 <div class="slider_title">
+						 <!--<div class="slider_title">
 							&nbsp;
-						</div>
+						</div>-->
 						<?php if ( function_exists( 'meteor_slideshow' ) ) { meteor_slideshow();} ?>						
 					<?php else: ?>
 						<img src="<?php bloginfo('template_url')?>/bootstrap/img/second_banner.png"/>

@@ -1,6 +1,7 @@
 <?php include("header.php") ?> 
 			<div>
-				<div id="content" class="row-fluid">
+
+				<div id="content" class="row-fluid" <?php if ($is_IE): ?> style="width:835px;" <?php endif; ?> >
 					<div class="span9" style="padding-right:15px;">
 						<!-- complex news start-->
 						<div class="row">
@@ -82,11 +83,11 @@
 											<div class="span10">
 												<span>党建园地</span>
 											</div>
-									<div class="span2 text-right">
-										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=6">
-											更 多
-										</a>
-									</div>
+											<div class="span2 text-right">
+												<a class="more" href="<? echo bloginfo('url'); ?>/?cat=6">
+													更 多
+												</a>
+											</div>
 										</div>
 									</div>
 									<hr style="margin:2px;"/>
@@ -106,7 +107,7 @@
 											<div class="span7">
 												<span>员工风采</span>
 											</div>
-									<div class="span2 text-right">
+									<div class="span5 text-right">
 										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=11">
 											更 多
 										</a>
@@ -148,7 +149,7 @@
 										<div class="span7">
 											<span>公告栏</span>
 										</div>
-									<div class="span2 text-right">
+									<div class="span5 text-right">
 										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=16">
 											更 多
 										</a>
@@ -180,7 +181,7 @@
 										<div class="span7">
 											<span>经典项目</span>
 										</div>
-									<div class="span2 text-right">
+									<div class="span5 text-right">
 										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=16">
 											更 多
 										</a>

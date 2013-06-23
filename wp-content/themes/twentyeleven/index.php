@@ -16,7 +16,20 @@ get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
+				<div style="backgound-color:gray;">
+<h1>Post types</h1>
+<?php
+$args = array(
+	'public'=>true,
+	'_builtin'=>false
+);
 
+$post_types = get_post_types($args,'names','and');
+foreach($post_types as $post_type){
+	echo '<p>'.$post_type.'</p>';
+}
+?>
+				</div>
 			<?php if ( have_posts() ) : ?>
 
 				<?php twentyeleven_content_nav( 'nav-above' ); ?>
