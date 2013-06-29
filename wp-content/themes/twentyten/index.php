@@ -80,10 +80,10 @@
 							<div class="span8">
 									<div class="news_title">
 										<div class="row">
-											<div class="span10">
+											<div class="span9">
 												<span>党建园地</span>
 											</div>
-											<div class="span2 text-right">
+											<div class="span3 text-right">
 												<a class="more" href="<? echo bloginfo('url'); ?>/?cat=6">
 													更 多
 												</a>
