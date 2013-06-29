@@ -1,7 +1,7 @@
 <?php include("header.php") ?> 
 			<div>
 
-				<div id="content" class="row-fluid" <?php if ($is_IE): ?> style="width:835px;" <?php endif; ?> >
+				<div id="content" class="row-fluid" >
 					<div class="span9" style="padding-right:15px;">
 						<!-- complex news start-->
 						<div class="row">

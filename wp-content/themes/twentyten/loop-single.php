@@ -15,9 +15,10 @@
  */
 ?>
 
-<div id="news_list">
+
 	<div id="news_content" class="row-fluid">
 		<div class="span3">
+			<div id="news_list">
 			<h4 class="news_title">
 				 <?php
 				$thisCat = get_category(get_query_var('cat'), false);
@@ -43,6 +44,7 @@
 				</li>
 				<?php endforeach;?>
 			</ul>
+		</div>
 		</div>
 		<div class="span9">
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>

@@ -15,6 +15,7 @@
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
+
     <![endif]-->
     <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/jquery.min.js"></script>
 	<?php
@@ -40,20 +41,22 @@
 					<div class="span6" style="padding-left:20px;padding-top:10px;">
 					<img src="<?php bloginfo('template_url') ?>/bootstrap/img/header.png" />
 					</div>	
-					<div class="span6 text-right">
+					<div class="span5 text-right">
 						<div class="row-fluid" style="padding-top:40px;">
-							<div class="span9 text-right">
+							<div class="span7 text-right">
 								<p class="text-info large"><img src="<?php bloginfo('template_url') ?>/bootstrap/img/employee_road.png"/>员工通道</p>
 							</div>
-							<div class="span3 text-left">
+							<div class="span4 text-left">
 							<p class="text-info"><img src="<?php bloginfo('template_url') ?>/bootstrap/img/email.png"/>企业邮箱</p>
 							</div>
+							<div class="span1"></div>
 						</div>
 					</div>	
+					<div class="span1"></div>
 				</div>
-				<div id="header_menu" class="row-fluid">
-					<div class="span4"></div>
-					<div class="span8 text-right" style="padding-right:30px;background-color:#eeeeee;">
+				<div id="header_menu" class="row-fluid" style="position:relative;z-index:9999;">
+					<div class="span2"></div>
+					<div class="span10 text-right" style="padding-right:30px;">
 						<div id="access" role="navigation">
 							<?php wp_nav_menu(array('menu_class'=>'menu-header','theme_location'=>'primary')) ?>
 						</div>
