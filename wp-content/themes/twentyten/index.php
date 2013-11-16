@@ -8,11 +8,14 @@
 							<div class="news_title">
 								<div class="row">
 									<div class="span10">
-										<span >综合新闻</span>
+										<?php 
+											//$cat = get_category(5);
+										?>
+										<span ><?php $cat = get_category(5); echo $cat->cat_name; ?></span>
 									</div>
 									<div class="span2 text-right">
 										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=5">
-											更 多
+										<!--更 多--> <?php _e("More","twentyten");?>
 										</a>
 									</div>
 								</div>
@@ -40,11 +43,12 @@
 							<div class="news_title">
 								<div class="row">
 									<div class="span10">
-										<span>图片新闻</span>
+										<!--<span>图片新闻</span>-->
+										<span ><?php $cat = get_category(4); echo $cat->cat_name; ?></span>
 									</div>
 									<div class="span2 text-right">
 										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=4">
-											更 多
+										<!--更 多--> <?php _e("More","twentyten");?>
 										</a>
 									</div>
 								</div>
@@ -81,11 +85,12 @@
 									<div class="news_title">
 										<div class="row">
 											<div class="span9">
-												<span>党建园地</span>
+												<!--<span>党建园地</span>-->
+												<span ><?php $cat = get_category(6); echo $cat->cat_name; ?></span>
 											</div>
 											<div class="span3 text-right">
 												<a class="more" href="<? echo bloginfo('url'); ?>/?cat=6">
-													更 多
+													<!--更 多--> <?php _e("More","twentyten");?>
 												</a>
 											</div>
 										</div>
@@ -105,11 +110,13 @@
 									<div class="news_title">
 										<div class="row">
 											<div class="span7">
-												<span>员工风采</span>
+												<!--<span>员工风采</span>-->
+												<span ><?php $cat = get_category(11); echo $cat->cat_name; ?></span>
 											</div>
 									<div class="span5 text-right">
 										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=11">
-											更 多
+											<!--更 多-->
+											<?php _e("More","twentyten"); ?>
 										</a>
 									</div>
 										</div>
@@ -147,11 +154,12 @@
 								<div class="news_title">
 									<div class="row">
 										<div class="span7">
-											<span>公告栏</span>
+											<!--<span>公告栏</span>-->
+											<span ><?php $cat = get_category(28); echo $cat->cat_name; ?></span>
 										</div>
 									<div class="span5 text-right">
 										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=16">
-											更 多
+										<!--更 多--><?php _e("More","twentyten"); ?>
 										</a>
 									</div>
 									</div>
@@ -179,11 +187,12 @@
 								<div class="news_title">
 									<div class="row">
 										<div class="span7">
-											<span>经典项目</span>
+											<!--<span>经典项目</span>-->		
+											<span ><?php $cat = get_category(16); echo $cat->cat_name; ?></span>
 										</div>
 									<div class="span5 text-right">
 										<a class="more" href="<? echo bloginfo('url'); ?>/?cat=16">
-											更 多
+											<!--更 多--><?php _e("More","twentyten"); ?>
 										</a>
 									</div>
 									</div>
@@ -219,7 +228,9 @@
 								<div class="news_title">
 									<div class="row">
 										<div class="span12">
-											<span>友情链接</span>
+											<span>
+											<!--更 多--><?php _e("Friend Links","twentyten"); ?>
+											</span>
 										</div>
 									</div>
 								</div>

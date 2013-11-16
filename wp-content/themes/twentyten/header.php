@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-	<title><?php bloginfo('title') ?></title>
+	<title><?php _e(bloginfo('title'),"twentyten"); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -44,10 +44,14 @@
 					<div class="span5 text-right">
 						<div class="row-fluid" style="padding-top:40px;">
 							<div class="span7 text-right">
-								<p class="text-info large"><img src="<?php bloginfo('template_url') ?>/bootstrap/img/employee_road.png"/>员工通道</p>
+								<p class="text-info large"><img src="<?php bloginfo('template_url') ?>/bootstrap/img/employee_road.png"/>
+									<!--员工通道--><?php _e("Staff Channel","twentyten"); ?>
+								</p>
 							</div>
 							<div class="span4 text-left">
-							<p class="text-info"><img src="<?php bloginfo('template_url') ?>/bootstrap/img/email.png"/>企业邮箱</p>
+							<p class="text-info"><img src="<?php bloginfo('template_url') ?>/bootstrap/img/email.png"/>
+								<!--企业邮箱--> <?php _e("Business Email","twentyten");?>
+							</p>
 							</div>
 							<div class="span1"></div>
 						</div>
@@ -58,7 +62,7 @@
 					<div class="span2"></div>
 					<div class="span10 text-right" style="padding-right:30px;">
 						<div id="access" role="navigation">
-							<?php wp_nav_menu(array('menu_class'=>'menu-header','theme_location'=>'primary')) ?>
+							<?php wp_nav_menu(array('menu_class'=>'menu-header','theme_location'=>'primary')) ?><?php qtrans_generateLanguageSelectCode('dropdown'); ?>
 						</div>
 					</div>
 				</div>

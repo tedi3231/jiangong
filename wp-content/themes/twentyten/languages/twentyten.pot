@@ -417,3 +417,18 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "One column, no sidebar"
 msgstr ""
+
+msgid "Friend Links"
+msgstr ""
+
+msgid "More"
+msgstr ""
+
+msgid "Copyright@Shanghai JianGong Company All rights reserved ICP:05055280"
+msgstr ""
+
+msgid "Staff Channel"
+msgstr ""
+
+msgid "Business Email"
+msgstr ""

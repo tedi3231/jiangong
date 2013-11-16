@@ -25,7 +25,8 @@
 				 </div>
 				 <div class="row">
 					 <p class="muted" style="margin-top:5px;width:500px;margin-left:30px;">
-						 Copyright@上海建工集团股份有限公司 All rights reserved 沪ICP备:05055280
+						<!-- Copyright@上海建工集团股份有限公司 All rights reserved 沪ICP备:05055280-->
+						<?php _e("Copyright@Shanghai JianGong Company All rights reserved ICP:05055280","twentyten"); ?>
 					 </p>
 				 </div>
 			 </div>
